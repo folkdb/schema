@@ -111,19 +111,6 @@ type Recording {
 }
 
 
-type Track {
-  recording: Recording
-  release: Release
-  title: String
-  position: String
-  primaryArtist: Artist
-  additionalArtists: [Artist!]
-  notes: String
-  textItems: [TextItem!]
-  mediaItems: [MediaItem!]
-}
-
-
 type Release {
   label: String
   catalogNum: String
@@ -142,4 +129,26 @@ type Release {
   discogsUrl: String
   spotifyUrl: String
   tidalUrl: String
+}
+
+
+type Track {
+  recording: Recording
+  release: Release
+  title: String
+  position: String
+  primaryArtist: Artist
+  additionalArtists: [Artist!]
+  notes: String
+  textItems: [TextItem!]
+  mediaItems: [MediaItem!]
+}
+
+
+type Query {
+  allSongs: [Song!]
+  allArtists: [Artist!]
+  allRecordings: [Recording!]
+  allReleases: [Release!]
+  allTracks: [Track!]
 }
