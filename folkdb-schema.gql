@@ -134,6 +134,8 @@ type Release {
   additionalArtists: [Artist!]
   primaryTitle: String
   alternateTitles: [String!]
+  isCompilation: Boolean
+  isReissue: Boolean
   notes: String
   textItems: [TextItem!]
   mediaItems: [MediaItem!]
