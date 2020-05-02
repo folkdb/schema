@@ -90,10 +90,12 @@ type Session {
   supervisor: Person
   additionalPersonnel: [Person!]
   organization: String
+  notes: String
 }
 
 
 type Recording {
+  identifier: String
   session: Session
   song: Song
   primaryArtist: Artist
@@ -104,4 +106,24 @@ type Recording {
   takeNumber: Int
   isMaster: Boolean
   notes: String
+}
+
+
+type Track {
+  recording: Recording
+  position: String
+}
+
+
+type Release {
+  label: String
+  date: Date
+  primaryArtist: Artist
+  additionalArtists: [Artist!]
+  primaryTitle: String
+  alternateTitles: [String!]
+  tracks: [Track!]
+  notes: String
+  textItems: [TextItem!]
+  mediaItems: [MediaItem!]
 }
