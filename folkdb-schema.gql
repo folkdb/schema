@@ -1,0 +1,107 @@
+type TextItem {
+  title: String!
+  description: String!
+  content: String!
+  citation: String
+}
+
+
+enum MediaFormat {
+  IMAGE
+  AUDIO
+  VIDEO
+}
+
+
+type MediaItem {
+  title: String!
+  description: String!
+  format: MediaFormat!
+  url: String!
+  citation: String
+}
+
+
+type Place {
+  names: [String!]
+}
+
+
+enum Gender {
+  MALE
+  FEMALE
+  NONBINARY
+}
+
+
+type Person {
+  lastName: String
+  firstName: String
+  otherNames: [String!]
+  gender: Gender 
+  birthDate: Date
+  birthPlace: Place
+  deathDate: Date
+  deathPlace: Place
+}
+
+
+type Performer {
+  person: Person!
+  role: String
+}
+
+
+type Artist {
+  name: String!
+  members: [Person!]
+}
+
+
+type Song {
+  roudNum: String
+  childNum: String
+  otherNums: [String!]
+  canonicalName: String
+  versionName: String
+  tuneName: String
+  otherNames: [String!]
+  writer: [Person!]
+  composer: [Person!]
+  lyricist: [Person!]
+  arranger: [Person!]
+  notes: String
+  textItems: [TextItem!]
+  mediaItems: [MediaItem!]
+}
+
+
+enum SessionType {
+  COMMERCIAL
+  DOCUMENTARY
+  AMATEUR
+}
+
+
+type Session {
+  type: SessionType
+  date: Date
+  place: Place
+  supervisor: Person
+  additionalPersonnel: [Person!]
+  organization: String
+}
+
+
+type Recording {
+  session: Session
+  song: Song
+  primaryArtist: Artist
+  additionalArtists: [Artist!]
+  primaryTitle: String
+  alternateTitles: [String!]
+  performers: [Performer!]
+  takeNumber: Int
+  isMaster: Boolean
+  notes: String
+}
