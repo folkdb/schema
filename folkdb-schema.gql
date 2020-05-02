@@ -106,24 +106,38 @@ type Recording {
   takeNumber: Int
   isMaster: Boolean
   notes: String
+  textItems: [TextItem!]
+  mediaItems: [MediaItem!]
 }
 
 
 type Track {
   recording: Recording
+  release: Release
+  title: String
   position: String
+  primaryArtist: Artist
+  additionalArtists: [Artist!]
+  notes: String
+  textItems: [TextItem!]
+  mediaItems: [MediaItem!]
 }
 
 
 type Release {
   label: String
+  catalogNum: String
   date: Date
+  country: String
+  format: String
   primaryArtist: Artist
   additionalArtists: [Artist!]
   primaryTitle: String
   alternateTitles: [String!]
-  tracks: [Track!]
   notes: String
   textItems: [TextItem!]
   mediaItems: [MediaItem!]
+  discogsUrl: String
+  spotifyUrl: String
+  tidalUrl: String
 }
