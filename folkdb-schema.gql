@@ -57,9 +57,6 @@ type Person {
   death: Death
   gender: Gender
   memberOf: [Artist!] @relation
-  songCredits: [SongCredit!] @relation
-  sessionCredits: [SessionCredit!] @relation
-  performerCredits: [PerformerCredit!] @relation
 }
 
 
