@@ -1,4 +1,4 @@
-type TextItem {
+type TextItem @embedded {
   title: String!
   description: String!
   content: String!
@@ -13,11 +13,11 @@ enum MediaFormat {
 }
 
 
-type MediaItem {
+type MediaItem @embedded {
+  format: MediaFormat!
   title: String!
   description: String!
-  format: MediaFormat!
-  url: String! @unique
+  url: String!
   citation: String
 }
 
@@ -26,6 +26,18 @@ type Place {
   country: String!
   region: String
   locale: String
+}
+
+
+type Birth {
+  date: Date
+  place: Place
+}
+
+
+type Death {
+  date: Date
+  place: Place
 }
 
 
@@ -40,19 +52,23 @@ type Person {
   lastName: String
   firstName: String
   otherNames: [String!]
-  gender: Gender 
-  birthDate: Date
-  birthPlace: Place
-  deathDate: Date
-  deathPlace: Place
-  notes: String
+  notes: String 
+  birth: Birth
+  death: Death
+  gender: Gender
   memberOf: [Artist!] @relation
+  songCredits: [SongCredit!] @relation
+  sessionCredits: [SessionCredit!] @relation
+  performerCredits: [PerformerCredit!] @relation
 }
 
 
 type Artist {
   name: String!
   members: [Person!] @relation
+  recordings: [Recording!] @relation
+  releases: [Release!] @relation
+  tracks: [Track!] @relation
 }
 
 
@@ -70,6 +86,7 @@ enum SongRole {
 type SongCredit {
   name: Person!
   role: SongRole!
+  songs: [Song!] @relation
 }
 
 
@@ -81,11 +98,11 @@ type Song {
   versionName: String
   tuneName: String
   otherNames: [String!]
-  credits: [SongCredit!]
   citation: String
   notes: String
   textItems: [TextItem!]
   mediaItems: [MediaItem!]
+  credits: [SongCredit!] @relation
 }
 
 
@@ -96,17 +113,28 @@ enum SessionType {
 }
 
 
+enum SessionRole {
+  PRODUCER
+  SUPERVISOR
+  TECHNICAL
+  COLLECTOR
+  ASSISTANT
+  SELF_RECORDING
+}
+
+
 type SessionCredit {
   name: Person!
-  role: String!
+  role: SessionRole!
+  sessions: [Session!] @relation
 }
 
 
 type Session {
-  type: SessionType
   date: Date
   place: Place
-  credits: [SessionCredit!]
+  type: SessionType
+  credits: [SessionCredit!] @relation
   organization: String
   notes: String
 }
@@ -123,54 +151,55 @@ type PerformerCredit {
   name: Person!
   role: PerformerRole
   details: String
+  recordings: [Recording!] @relation
 }
 
 
 type Recording {
-  identifier: String
   session: Session
   song: Song
-  primaryTitle: String
-  alternateTitles: [String!]
   artists: [Artist!] @relation
   credits: [PerformerCredit!] @relation
+  primaryTitle: String
+  alternateTitles: [String!]
+  identifier: String
   takeNumber: Int
   isMaster: Boolean
   notes: String
-  textItems: [TextItem!] @relation
-  mediaItems: [MediaItem!] @relation
+  textItems: [TextItem!]
+  mediaItems: [MediaItem!]
 }
 
 
 type Release {
-  label: String
-  catalogNum: String
   date: Date
-  country: String
-  format: String
+  country: Place
+  artists: [Artist!] @relation
   primaryTitle: String
   alternateTitles: [String!]
-  artists: [Artist!] @relation
+  label: String
+  catalogNum: String
+  format: String
   isCompilation: Boolean
   isReissue: Boolean
   notes: String
-  textItems: [TextItem!] @relation
-  mediaItems: [MediaItem!] @relation
   discogsUrl: String
   spotifyUrl: String
   tidalUrl: String
+  textItems: [TextItem!]
+  mediaItems: [MediaItem!]
 }
 
 
 type Track {
   recording: Recording
   release: Release
+  artists: [Artist!] @relation
   title: String
   position: String
-  artists: [Artist!] @relation
   notes: String
-  textItems: [TextItem!] @relation
-  mediaItems: [MediaItem!] @relation
+  textItems: [TextItem!]
+  mediaItems: [MediaItem!]
 }
 
 
