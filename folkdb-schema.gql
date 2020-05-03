@@ -17,13 +17,15 @@ type MediaItem {
   title: String!
   description: String!
   format: MediaFormat!
-  url: String!
+  url: String! @unique
   citation: String
 }
 
 
 type Place {
-  names: [String!]
+  country: String!
+  region: String
+  locale: String
 }
 
 
@@ -43,18 +45,31 @@ type Person {
   birthPlace: Place
   deathDate: Date
   deathPlace: Place
-}
-
-
-type Performer {
-  person: Person!
-  role: String
+  notes: String
+  memberOf: [Artist!] @relation
 }
 
 
 type Artist {
   name: String!
-  members: [Person!]
+  members: [Person!] @relation
+}
+
+
+enum SongRole {
+  WRITER
+  COMPOSER
+  LYRICIST
+  ARRANGER
+  TRANSCRIBER
+  COLLECTOR
+  PUBLISHER
+}
+
+
+type SongCredit {
+  name: Person!
+  role: SongRole!
 }
 
 
@@ -66,10 +81,8 @@ type Song {
   versionName: String
   tuneName: String
   otherNames: [String!]
-  writer: [Person!]
-  composer: [Person!]
-  lyricist: [Person!]
-  arranger: [Person!]
+  credits: [SongCredit!]
+  citation: String
   notes: String
   textItems: [TextItem!]
   mediaItems: [MediaItem!]
@@ -83,14 +96,33 @@ enum SessionType {
 }
 
 
+type SessionCredit {
+  name: Person!
+  role: String!
+}
+
+
 type Session {
   type: SessionType
   date: Date
   place: Place
-  supervisor: Person
-  additionalPersonnel: [Person!]
+  credits: [SessionCredit!]
   organization: String
   notes: String
+}
+
+
+enum PerformerRole {
+  VOCALIST
+  INSTRUMENTALIST
+  SPEAKER
+}
+
+
+type PerformerCredit {
+  name: Person!
+  role: PerformerRole
+  details: String
 }
 
 
@@ -98,16 +130,15 @@ type Recording {
   identifier: String
   session: Session
   song: Song
-  primaryArtist: Artist
-  additionalArtists: [Artist!]
   primaryTitle: String
   alternateTitles: [String!]
-  performers: [Performer!]
+  artists: [Artist!] @relation
+  credits: [PerformerCredit!] @relation
   takeNumber: Int
   isMaster: Boolean
   notes: String
-  textItems: [TextItem!]
-  mediaItems: [MediaItem!]
+  textItems: [TextItem!] @relation
+  mediaItems: [MediaItem!] @relation
 }
 
 
@@ -117,15 +148,14 @@ type Release {
   date: Date
   country: String
   format: String
-  primaryArtist: Artist
-  additionalArtists: [Artist!]
   primaryTitle: String
   alternateTitles: [String!]
+  artists: [Artist!] @relation
   isCompilation: Boolean
   isReissue: Boolean
   notes: String
-  textItems: [TextItem!]
-  mediaItems: [MediaItem!]
+  textItems: [TextItem!] @relation
+  mediaItems: [MediaItem!] @relation
   discogsUrl: String
   spotifyUrl: String
   tidalUrl: String
@@ -137,11 +167,10 @@ type Track {
   release: Release
   title: String
   position: String
-  primaryArtist: Artist
-  additionalArtists: [Artist!]
+  artists: [Artist!] @relation
   notes: String
-  textItems: [TextItem!]
-  mediaItems: [MediaItem!]
+  textItems: [TextItem!] @relation
+  mediaItems: [MediaItem!] @relation
 }
 
 
