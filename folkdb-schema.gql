@@ -10,6 +10,7 @@ enum MediaFormat {
   IMAGE
   AUDIO
   VIDEO
+  DOCUMENT
 }
 
 
@@ -52,16 +53,25 @@ type Person {
   lastName: String
   firstName: String
   otherNames: [String!]
-  notes: String 
   birth: Birth
   death: Death
   gender: Gender
+  notes: String
+  wikipediaUrl: String
+  textItems: [TextItem!]
+  mediaItems: [MediaItem!]
   memberOf: [Artist!] @relation
 }
 
 
 type Artist {
   name: String!
+  dahrTalentId: ID
+  discogsArtistId: ID
+  spotifyArtistId: ID
+  wikipediaUrl: String
+  textItems: [TextItem!]
+  mediaItems: [MediaItem!]
   members: [Person!] @relation
   recordings: [Recording!] @relation
   releases: [Release!] @relation
@@ -97,6 +107,7 @@ type Song {
   otherNames: [String!]
   citation: String
   notes: String
+  wikipediaUrl: String
   textItems: [TextItem!]
   mediaItems: [MediaItem!]
   credits: [SongCredit!] @relation
@@ -149,6 +160,7 @@ type PerformerCredit {
   name: Person!
   role: PerformerRole
   details: String
+  dahrTalentId: ID
   recordings: [Recording!] @relation
 }
 
@@ -164,6 +176,7 @@ type Recording {
   takeNumber: Int
   isMaster: Boolean
   notes: String
+  dahrMatrixId: ID
   textItems: [TextItem!]
   mediaItems: [MediaItem!]
 }
@@ -181,9 +194,10 @@ type Release {
   isCompilation: Boolean
   isReissue: Boolean
   notes: String
-  discogsUrl: String
-  spotifyUrl: String
-  tidalUrl: String
+  discogsReleaseId: ID
+  discogsMasterId: ID
+  spotifyAlbumId: ID
+  tidalAlbumId: ID
   textItems: [TextItem!]
   mediaItems: [MediaItem!]
 }
@@ -196,6 +210,8 @@ type Track {
   title: String
   position: String
   notes: String
+  spotifyTrackId: ID
+  tidalTrackId: ID
   textItems: [TextItem!]
   mediaItems: [MediaItem!]
 }
