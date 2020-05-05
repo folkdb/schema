@@ -203,6 +203,23 @@ type Release {
 }
 
 
+type AudioFeatures @embedded {
+  durationMs: Int
+  key: Int
+  mode: Int
+  timeSignature: Int
+  acousticness: Float
+  danceability: Float
+  energy: Float
+  instrumentalness: Float
+  liveness: Float
+  loudness: Float
+  speechiness: Float
+  valence: Float
+  tempo: Float
+}
+
+
 type Track {
   recording: Recording
   release: Release
@@ -212,6 +229,7 @@ type Track {
   notes: String
   spotifyTrackId: ID
   tidalTrackId: ID
+  audioFeatures: AudioFeatures
   textItems: [TextItem!]
   mediaItems: [MediaItem!]
 }
