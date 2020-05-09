@@ -167,7 +167,7 @@ type Recording {
   place: Place
   type: SessionType
   organization: String
-  catalogNum: String
+  catalogNum: ID
   sessionCredits: [SessionCredit!] @relation
   performerCredits: [PerformerCredit!] @relation
   takeNumber: Int
@@ -186,7 +186,7 @@ type Release {
   primaryTitle: String
   alternateTitles: [String!]
   label: String
-  catalogNum: String
+  catalogNum: ID
   format: String
   isCompilation: Boolean
   isReissue: Boolean
