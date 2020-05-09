@@ -23,20 +23,20 @@ type MediaItem @embedded {
 }
 
 
-type Place {
+type Place @embedded {
   country: String!
   region: String
   locale: String
 }
 
 
-type Birth {
+type Birth @embedded {
   date: Date
   place: Place
 }
 
 
-type Death {
+type Death @embedded {
   date: Date
   place: Place
 }
@@ -50,9 +50,11 @@ enum Gender {
 
 
 type Person {
-  lastName: String
-  firstName: String
-  otherNames: [String!]
+  familyName: String
+  givenName: String
+  middleNames: [String!]
+  legalSurnames: [String!]
+  professionalName: String
   birth: Birth
   death: Death
   gender: Gender
@@ -135,17 +137,7 @@ enum SessionRole {
 type SessionCredit {
   name: Person!
   role: SessionRole!
-  sessions: [Session!] @relation
-}
-
-
-type Session {
-  date: Date
-  place: Place
-  type: SessionType
-  credits: [SessionCredit!] @relation
-  organization: String
-  notes: String
+  recordings: [Recording!] @relation
 }
 
 
@@ -166,16 +158,20 @@ type PerformerCredit {
 
 
 type Recording {
-  session: Session
   song: Song
   artists: [Artist!] @relation
-  credits: [PerformerCredit!] @relation
   primaryTitle: String
   alternateTitles: [String!]
-  identifier: String
+  date: Date
+  place: Place
+  type: SessionType
+  organization: String
+  sessionCredits: [SessionCredit!] @relation
+  performerCredits: [PerformerCredit!] @relation
   takeNumber: Int
   isMaster: Boolean
   notes: String
+  catalogId: String
   dahrMatrixId: ID
   textItems: [TextItem!]
   mediaItems: [MediaItem!]
@@ -184,7 +180,7 @@ type Recording {
 
 type Release {
   date: Date
-  country: Place
+  country: String
   artists: [Artist!] @relation
   primaryTitle: String
   alternateTitles: [String!]
