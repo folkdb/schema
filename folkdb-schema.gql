@@ -55,6 +55,7 @@ type Person {
   middleNames: [String!]
   legalSurnames: [String!]
   professionalName: String
+  alsoCreditedAs: [String!]
   birth: Birth
   death: Death
   gender: Gender
@@ -93,7 +94,7 @@ enum SongRole {
 
 
 type SongCredit {
-  name: Person!
+  person: Person!
   role: SongRole!
   songs: [Song!] @relation
 }
@@ -135,7 +136,7 @@ enum SessionRole {
 
 
 type SessionCredit {
-  name: Person!
+  person: Person!
   role: SessionRole!
   recordings: [Recording!] @relation
 }
@@ -149,7 +150,7 @@ enum PerformerRole {
 
 
 type PerformerCredit {
-  name: Person!
+  person: Person!
   role: PerformerRole
   details: String
   dahrTalentId: ID
