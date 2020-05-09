@@ -166,12 +166,12 @@ type Recording {
   place: Place
   type: SessionType
   organization: String
+  catalogNum: String
   sessionCredits: [SessionCredit!] @relation
   performerCredits: [PerformerCredit!] @relation
   takeNumber: Int
   isMaster: Boolean
   notes: String
-  catalogId: String
   dahrMatrixId: ID
   textItems: [TextItem!]
   mediaItems: [MediaItem!]
