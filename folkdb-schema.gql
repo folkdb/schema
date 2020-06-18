@@ -106,7 +106,9 @@ type Song {
   otherNums: [String!]
   canonicalName: String
   versionName: String
+  versionMode: String
   tuneName: String
+  tuneFragment: String
   otherNames: [String!]
   citation: String
   notes: String
