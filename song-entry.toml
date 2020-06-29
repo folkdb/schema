@@ -2,45 +2,58 @@
 
 canonicalName = "Identifies a set of variations on a traditional theme"
 versionName = "Identifies a specific variation of a traditional theme"
-tuneName = "Alternative name for the tune associated with this version"
+tuneName = "Alternative name for the tune associated with this variation"
 otherNames = ["Alternative names by which the theme/version is known"]
 roudNum = "Number assigned in the Roud Folk Song Index (if any)"
 childNum = "Number assigned in the Child Ballads (if any)"
 otherNums = ["Identifiers used in other collections"]
-
-[[credits]]
-person = "Name most commonly used to identify the creator/contributor"
-creditedAs = "Name as credited (if different from usual name)"
-role = "writer|composer|lyricist|arranger|transcriber|collector|publisher"
+credits = ["Creator/contributor credits listed as ROLE: NAME"]
+notes = "Information relevant to further research"
 
 [[transcriptions]]
-
+url = "URL for digitized source, library record, or purchasing info"
+title = "Title of the song/tune as printed in the collection"
+pageNumber = "Page number where the title appears"
+transcriptionCredits = ["Listed as ROLE: NAME AS CREDITED (MORE COMMON NAME)"]
+publicationTitle = "Title of the published collection"
+publicationCredits = ["Listed as ROLE: NAME AS CREDITED (MORE COMMON NAME)"]
+publicationEdition = "If not first edition, provide edition number as integer"
+publisher = "Publication company, imprint name, or institutional publisher"
+publicationPlace = "Formatted as CITY (COUNTRY)"
+publicationYear = "Original publication year for edition (ignoring reprints)"
+publicationIssue = "Issue number or other identifier for serial publications"
 
 [[arrangements]]
-format = "abc|vextab|img"
-instruments = "Instruments included in the arrangement"
+format = "abc|vextab|image"
+content = "Notation to render or URL of image"
 tonic = "The tonal center of the arrangement (often the final/resting tone)"
 mode = "Best classification of the pitch set relative to the tonal center"
-content = "Notation to render or URL of image"
-source = "Source citation for arrangement (may reference transcription)"
+instruments = "Instruments included in the arrangement"
+source = "Source citation for arrangement (may reference transcription index)"
 
 [[recordings]]
-url = ""
+url = "URL for streaming audio, library record, or purchasing info"
 title = "Title of the released track or audio file of a recording"
-artists = "Array of one or more artists credited on the recording"
-recordingDate = ""
-recordingPlace = ""
-recordingPersonnel = [""]
-releaseTitle = ""
-releaseDate = ""
-releaseLabel = ""
-compilationTitle = ""
-compilationDate = ""
-compilcationLabel = ""
+artists = "[Solo artist name, group name, or multiple performers/groups]"
+recordingDate = "Date of the recording session as YEAR (MONTH DAY)"
+recordingPlace = "Place of the recording session as CITY, STATE (COUNTRY)"
+recordingPersonnel = ["Listed as ROLE: NAME AS CREDITED (MORE COMMON NAME)"]
+sessionType = "commercial|documentary|amateur"
+takeNumber = "Number assigned if one of multiple takes"
+isMaster = "true|false (if one of multiple takes)"
+releaseUrl = "URL for info about the original release"
+releaseTitle = "Title of the original release on which the track appears"
+releaseYear = "Year of the original release (ignoring reissues)"
+releaseLabel = "Label of the original release formatted as NAME (COUNTRY)"
+compilationUrl = "URL for info about the compilation release"
+compilationTitle = "Title of a compilation on which the track appears"
+compilationYear = "Year of the compilation release (ignoring reissues)"
+compilationLabel = "Label of the compilation release"
+catalogNums = "[Identifiers used in archival and database collections]"
 
 [[media]]
-format = ""
-title = ""
-description = ""
-url = ""
-citation = ""
+format = "image|audio|video|website|pdf"
+url = "URL to view or download"
+title = "Title of the media item"
+description = "Brief description of the contents"
+citation = "Full source citation as appropriate"
