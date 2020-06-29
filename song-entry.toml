@@ -1,0 +1,46 @@
+# Song
+
+canonicalName = "Identifies a set of variations on a traditional theme"
+versionName = "Identifies a specific variation of a traditional theme"
+tuneName = "Alternative name for the tune associated with this version"
+otherNames = ["Alternative names by which the theme/version is known"]
+roudNum = "Number assigned in the Roud Folk Song Index (if any)"
+childNum = "Number assigned in the Child Ballads (if any)"
+otherNums = ["Identifiers used in other collections"]
+
+[[credits]]
+person = "Name most commonly used to identify the creator/contributor"
+creditedAs = "Name as credited (if different from usual name)"
+role = "writer|composer|lyricist|arranger|transcriber|collector|publisher"
+
+[[transcriptions]]
+
+
+[[arrangements]]
+format = "abc|vextab|img"
+instruments = "Instruments included in the arrangement"
+tonic = "The tonal center of the arrangement (often the final/resting tone)"
+mode = "Best classification of the pitch set relative to the tonal center"
+content = "Notation to render or URL of image"
+source = "Source citation for arrangement (may reference transcription)"
+
+[[recordings]]
+url = ""
+title = "Title of the released track or audio file of a recording"
+artists = "Array of one or more artists credited on the recording"
+recordingDate = ""
+recordingPlace = ""
+recordingPersonnel = [""]
+releaseTitle = ""
+releaseDate = ""
+releaseLabel = ""
+compilationTitle = ""
+compilationDate = ""
+compilcationLabel = ""
+
+[[media]]
+format = ""
+title = ""
+description = ""
+url = ""
+citation = ""
