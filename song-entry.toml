@@ -10,19 +10,6 @@ otherNums = ["Identifiers used in other collections"]
 credits = ["Creator/contributor credits listed as ROLE: NAME"]
 notes = "Information relevant to further research"
 
-[[transcriptions]]
-url = "URL for digitized source, library record, or purchasing info"
-title = "Title of the song/tune as printed in the collection"
-pageNumber = "Page number where the title appears"
-transcriptionCredits = ["Listed as ROLE: NAME AS CREDITED (MORE COMMON NAME)"]
-publicationTitle = "Title of the published collection"
-publicationCredits = ["Listed as ROLE: NAME AS CREDITED (MORE COMMON NAME)"]
-publicationEdition = "If not first edition, provide edition number as integer"
-publisher = "Publication company, imprint name, or institutional publisher"
-publicationPlace = "Formatted as CITY (COUNTRY)"
-publicationYear = "Original publication year for edition (ignoring reprints)"
-publicationIssue = "Issue number or other identifier for serial publications"
-
 [[arrangements]]
 format = "abc|vextab|image"
 content = "Notation to render or URL of image"
@@ -50,6 +37,19 @@ compilationTitle = "Title of a compilation on which the track appears"
 compilationYear = "Year of the compilation release (ignoring reissues)"
 compilationLabel = "Label of the compilation release"
 catalogNums = "[Identifiers used in archival and database collections]"
+
+[[transcriptions]]
+url = "URL for digitized source, library record, or purchasing info"
+title = "Title of the song/tune as printed in the collection"
+pageNumber = "Page number where the title appears"
+transcriptionCredits = ["Listed as ROLE: NAME AS CREDITED (MORE COMMON NAME)"]
+publicationTitle = "Title of the published collection"
+publicationCredits = ["Listed as ROLE: NAME AS CREDITED (MORE COMMON NAME)"]
+publicationEdition = "If not first edition, provide edition number as integer"
+publisher = "Publication company, imprint name, or institutional publisher"
+publicationPlace = "Formatted as CITY (COUNTRY)"
+publicationYear = "Original publication year for edition (ignoring reprints)"
+publicationIssue = "Issue number or other identifier for serial publications"
 
 [[media]]
 format = "image|audio|video|website|pdf"
