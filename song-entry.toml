@@ -12,10 +12,10 @@ notes = "Information relevant to further research"
 
 [[arrangements]]
 format = "abc|vextab|image"
+instruments = "Instruments included in this arrangement"
 content = "Notation to render or URL of image"
 tonic = "The tonal center of the arrangement (often the final/resting tone)"
 mode = "Best classification of the pitch set relative to the tonal center"
-instruments = "Instruments included in the arrangement"
 source = "Source citation for arrangement (may reference transcription index)"
 
 [[recordings]]
