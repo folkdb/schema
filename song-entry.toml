@@ -10,34 +10,6 @@ otherNums = ["Identifiers used in other collections"]
 credits = ["Creator/contributor credits listed as ROLE: NAME"]
 notes = "Information relevant to further research"
 
-[[arrangements]]
-format = "abc|vextab|image"
-instruments = "Instruments included in this arrangement"
-content = "Notation to render or URL of image"
-tonic = "The tonal center of the arrangement (often the final/resting tone)"
-mode = "Best classification of the pitch set relative to the tonal center"
-source = "Source citation for arrangement (may reference transcription index)"
-
-[[recordings]]
-url = "URL for streaming audio, library record, or purchasing info"
-title = "Title of the released track or audio file of a recording"
-artists = "[Solo artist name, group name, or multiple performers/groups]"
-recordingDate = "Date of the recording session as YEAR (MONTH DAY)"
-recordingPlace = "Place of the recording session as CITY, STATE (COUNTRY)"
-recordingPersonnel = ["Listed as ROLE: NAME AS CREDITED (MORE COMMON NAME)"]
-sessionType = "commercial|documentary|amateur"
-takeNumber = "Number assigned if one of multiple takes"
-isMaster = "true|false (if one of multiple takes)"
-releaseUrl = "URL for info about the original release"
-releaseTitle = "Title of the original release on which the track appears"
-releaseYear = "Year of the original release (ignoring reissues)"
-releaseLabel = "Label of the original release formatted as NAME (COUNTRY)"
-compilationUrl = "URL for info about the compilation release"
-compilationTitle = "Title of a compilation on which the track appears"
-compilationYear = "Year of the compilation release (ignoring reissues)"
-compilationLabel = "Label of the compilation release"
-catalogNums = "[Identifiers used in archival and database collections]"
-
 [[transcriptions]]
 url = "URL for digitized source, library record, or purchasing info"
 title = "Title of the song/tune as printed in the collection"
@@ -50,6 +22,36 @@ publisher = "Publication company, imprint name, or institutional publisher"
 publicationPlace = "Formatted as CITY (COUNTRY)"
 publicationYear = "Original publication year for edition (ignoring reprints)"
 publicationIssue = "Issue number or other identifier for serial publications"
+catalogRef = "Reference in a library catalog or archival system"
+
+[[arrangements]]
+format = "abc|vextab|image"
+instruments = "Instruments included in this arrangement"
+tonic = "The tonal center of the arrangement (often the final/resting tone)"
+mode = "Best classification of the pitch set relative to the tonal center"
+content = "Notation to render or URL of image"
+source = "Source citation for arrangement (may reference transcription)"
+
+[[recordings]]
+url = "URL for streaming audio, library record, or purchasing info"
+title = "Title of the released track or audio file of a recording"
+artists = "[Solo artist name, group name, or multiple performers/groups]"
+recordingDate = "Date of the recording session as YEAR (MONTH DAY)"
+recordingPlace = "Place of the recording session as CITY, STATE (COUNTRY)"
+recordingPersonnel = ["Listed as ROLE: NAME AS CREDITED (MORE COMMON NAME)"]
+sessionType = "commercial|documentary|amateur"
+matrixNum = "Matrix number assigned to recording"
+takeNum = "Number assigned if one of multiple takes"
+isMaster = "true|false (if one of multiple takes)"
+releaseUrl = "URL for info about the original release"
+releaseTitle = "Title of the original release on which the track appears"
+releaseYear = "Year of the original release (ignoring reissues)"
+releaseLabel = "Label of the original release formatted as NAME (COUNTRY)"
+catalogNum = "Catalog number assigned to original release"
+compilationUrl = "URL for info about the compilation release"
+compilationTitle = "Title of a compilation on which the track appears"
+compilationYear = "Year of the compilation release (ignoring reissues)"
+compilationLabel = "Label of the compilation release"
 
 [[media]]
 format = "image|audio|video|website|pdf"
