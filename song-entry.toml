@@ -1,5 +1,4 @@
 # Song
-
 canonicalName = "Identifies a set of variations on a traditional theme"
 versionName = "Identifies a specific variation of a traditional theme"
 tuneName = "Alternative name for the tune associated with this variation"
@@ -11,18 +10,21 @@ credits = ["Creator/contributor credits listed as ROLE: NAME"]
 notes = "Information relevant to further research"
 
 [[transcriptions]]
-url = "URL for digitized source, library record, or purchasing info"
+url = "Direct URL for the digitized transcription"
 title = "Title of the song/tune as printed in the collection"
+credits = ["Listed as ROLE: NAME AS CREDITED (MORE COMMON NAME)"]
 pageNumber = "Page number where the title appears"
-transcriptionCredits = ["Listed as ROLE: NAME AS CREDITED (MORE COMMON NAME)"]
-publicationTitle = "Title of the published collection"
-publicationCredits = ["Listed as ROLE: NAME AS CREDITED (MORE COMMON NAME)"]
-publicationEdition = "If not first edition, provide edition number as integer"
-publisher = "Publication company, imprint name, or institutional publisher"
-publicationPlace = "Formatted as CITY (COUNTRY)"
-publicationYear = "Original publication year for edition (ignoring reprints)"
-publicationIssue = "Issue number or other identifier for serial publications"
-catalogRef = "Reference in a library catalog or archival system"
+[transcriptions.publication]
+  url = "URL for digitized source, library record, or purchasing info"
+  title = "Title of the published collection"
+  credits = ["Listed as ROLE: NAME AS CREDITED (MORE COMMON NAME)"]
+  edition = "If not first edition, provide edition number"
+  publisher = "Publication company, imprint name, or institutional publisher"
+  place = "Formatted as CITY (COUNTRY)"
+  year = "Original publication year for edition (ignoring reprints)"
+  vol = "Volume number for multi-volume publications"
+  issue = "Issue number or other identifier for serial publications"
+  catalogRef = "Reference in a library catalog or archival system"
 
 [[arrangements]]
 format = "abc|vextab|image"
@@ -33,25 +35,31 @@ content = "Notation to render or URL of image"
 source = "Source citation for arrangement (may reference transcription)"
 
 [[recordings]]
-url = "URL for streaming audio, library record, or purchasing info"
+url = "URL for the audio file and/or info about the recording"
 title = "Title of the released track or audio file of a recording"
 artists = "[Solo artist name, group name, or multiple performers/groups]"
-recordingDate = "Date of the recording session as YEAR (MONTH DAY)"
-recordingPlace = "Place of the recording session as CITY, STATE (COUNTRY)"
-recordingPersonnel = ["Listed as ROLE: NAME AS CREDITED (MORE COMMON NAME)"]
+date = "Date of the recording session as YEAR (MONTH DAY)"
+place = "Place of the recording session as CITY, STATE (COUNTRY)"
+personnel = ["Listed as ROLE: NAME AS CREDITED (MORE COMMON NAME)"]
 sessionType = "commercial|documentary|amateur"
 matrixNum = "Matrix number assigned to recording"
 takeNum = "Number assigned if one of multiple takes"
 isMaster = "true|false (if one of multiple takes)"
-releaseUrl = "URL for info about the original release"
-releaseTitle = "Title of the original release on which the track appears"
-releaseYear = "Year of the original release (ignoring reissues)"
-releaseLabel = "Label of the original release formatted as NAME (COUNTRY)"
-catalogNum = "Catalog number assigned to original release"
-compilationUrl = "URL for info about the compilation release"
-compilationTitle = "Title of a compilation on which the track appears"
-compilationYear = "Year of the compilation release (ignoring reissues)"
-compilationLabel = "Label of the compilation release"
+[recordings.release]
+  url = "URL for info about the original release"
+  title = "Title of the original release on which the track appears"
+  year = "Year of the original release (ignoring reissues)"
+  label = "Label of the original release formatted as NAME (COUNTRY)"
+  catalogNum = "Catalog number assigned to original release"
+[recordings.compilation]
+  url = "URL for info about the compilation release"
+  title = "Title of a compilation on which the track appears"
+  year = "Year of the compilation release (ignoring reissues)"
+  label = "Label of the compilation release"
+[recordings.streaming]
+  spotify = "Track ID on Spotify"
+  tidal = "Track ID on TIDAL"
+  youtube = "Video ID on YouTube"
 
 [[media]]
 format = "image|audio|video|website|pdf"
