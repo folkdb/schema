@@ -29,12 +29,12 @@ url = "Direct URL for the digitized transcription"
 [[recordings]]
 title = "Title of the released track or audio file of a recording"
 artists = "[Solo artist name, group name, or multiple performers/groups]"
-sessionType = "commercial|documentary|amateur"
+sessionType = "COMMERCIAL|DOCUMENTARY|AMATEUR"
 date = "Date of the recording session as YEAR (MONTH DAY)"
 place = "Place of the recording session as CITY, STATE (COUNTRY)"
 personnel = ["Listed as ROLE: NAME AS CREDITED (MORE COMMON NAME)"]
 matrixNum = "Matrix number as etched on the A or B side of a single"
-isMaster = "true|false (if one of multiple takes)"
+isMaster = "TRUE|FALSE (if one of multiple takes)"
 takeNum = "Take number as documented (if one of multiple takes)"
 dahrID = "Matrix ID in UCSB's Discography of American Historical Recordings"
 catalogRef = "Reference in a library catalog or archival system"
@@ -60,7 +60,7 @@ url = "URL for additional details about the recording"
   archiveId = "Item ID on Internet Archive"
 
 [[arrangements]]
-format = "abc|vextab|image"
+format = "ABC|VEXTAB|IMAGE"
 instruments = "Instruments included in this arrangement"
 tonic = "The tonal center of the arrangement (often the final/resting tone)"
 mode = "Best classification of the pitch set relative to the tonal center"
@@ -68,7 +68,7 @@ content = "Notation to render or URL of image"
 source = "Source citation for arrangement (may reference transcription)"
 
 [[media]]
-format = "image|audio|video|website|pdf"
+format = "IMAGE|AUDIO|VIDEO|WEBSITE|PDF"
 url = "URL to view or download"
 title = "Title of the media item"
 description = "Brief description of the contents"
