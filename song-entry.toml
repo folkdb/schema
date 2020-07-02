@@ -10,12 +10,11 @@ credits = ["Creator/contributor credits listed as ROLE: NAME"]
 notes = "Information relevant to further research"
 
 [[transcriptions]]
-url = "Direct URL for the digitized transcription"
 title = "Title of the song/tune as printed in the collection"
 credits = ["Listed as ROLE: NAME AS CREDITED (MORE COMMON NAME)"]
 pageNumber = "Page number where the title appears"
+url = "Direct URL for the digitized transcription"
 [transcriptions.publication]
-  url = "URL for digitized source, library record, or purchasing info"
   title = "Title of the published collection"
   credits = ["Listed as ROLE: NAME AS CREDITED (MORE COMMON NAME)"]
   edition = "If not first edition, provide edition number"
@@ -25,6 +24,40 @@ pageNumber = "Page number where the title appears"
   vol = "Volume number for multi-volume publications"
   issue = "Issue number or other identifier for serial publications"
   catalogRef = "Reference in a library catalog or archival system"
+  url = "URL for digitized source, library record, or purchasing info"
+
+[[recordings]]
+title = "Title of the released track or audio file of a recording"
+artists = "[Solo artist name, group name, or multiple performers/groups]"
+sessionType = "commercial|documentary|amateur"
+date = "Date of the recording session as YEAR (MONTH DAY)"
+place = "Place of the recording session as CITY, STATE (COUNTRY)"
+personnel = ["Listed as ROLE: NAME AS CREDITED (MORE COMMON NAME)"]
+matrixNum = "Matrix number as etched on the A or B side of a single"
+isMaster = "true|false (if one of multiple takes)"
+takeNum = "Take number as documented (if one of multiple takes)"
+dahrID = "Matrix ID in UCSB's Discography of American Historical Recordings"
+catalogRef = "Reference in a library catalog or archival system"
+url = "URL for additional details about the recording"
+[recordings.release]
+  title = "Title of the original release on which the track appears"
+  year = "Year of the original release (ignoring reissues)"
+  label = "Label of the original release formatted as NAME (COUNTRY)"
+  matrixNum = "Matrix number(s) as etched on an LP or CD"
+  catalogNum = "Catalog number as printed on the label of a record or CD"
+  discogsId = "Release ID on Discogs"
+  url = "URL for additional details about the original release"
+[recordings.compilation]
+  title = "Title of a compilation on which the track appears"
+  year = "Year of the compilation release (ignoring reissues)"
+  label = "Label of the compilation release"
+  discogsId = "Release ID on Discogs"
+  url = "URL for additional details about the compilation release"
+[recordings.streaming]
+  spotifyId = "Track ID on Spotify"
+  tidalId = "Track ID on TIDAL"
+  youtubeId = "Video ID on YouTube"
+  archiveId = "Item ID on Internet Archive"
 
 [[arrangements]]
 format = "abc|vextab|image"
@@ -33,33 +66,6 @@ tonic = "The tonal center of the arrangement (often the final/resting tone)"
 mode = "Best classification of the pitch set relative to the tonal center"
 content = "Notation to render or URL of image"
 source = "Source citation for arrangement (may reference transcription)"
-
-[[recordings]]
-url = "URL for the audio file and/or info about the recording"
-title = "Title of the released track or audio file of a recording"
-artists = "[Solo artist name, group name, or multiple performers/groups]"
-date = "Date of the recording session as YEAR (MONTH DAY)"
-place = "Place of the recording session as CITY, STATE (COUNTRY)"
-personnel = ["Listed as ROLE: NAME AS CREDITED (MORE COMMON NAME)"]
-sessionType = "commercial|documentary|amateur"
-matrixNum = "Matrix number assigned to recording"
-takeNum = "Number assigned if one of multiple takes"
-isMaster = "true|false (if one of multiple takes)"
-[recordings.release]
-  url = "URL for info about the original release"
-  title = "Title of the original release on which the track appears"
-  year = "Year of the original release (ignoring reissues)"
-  label = "Label of the original release formatted as NAME (COUNTRY)"
-  catalogNum = "Catalog number assigned to original release"
-[recordings.compilation]
-  url = "URL for info about the compilation release"
-  title = "Title of a compilation on which the track appears"
-  year = "Year of the compilation release (ignoring reissues)"
-  label = "Label of the compilation release"
-[recordings.streaming]
-  spotify = "Track ID on Spotify"
-  tidal = "Track ID on TIDAL"
-  youtube = "Video ID on YouTube"
 
 [[media]]
 format = "image|audio|video|website|pdf"
