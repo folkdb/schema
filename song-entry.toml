@@ -2,7 +2,7 @@
 canonicalName = "Identifies a set of variations on a traditional theme"
 versionName = "Identifies a specific variation of a traditional theme"
 tuneName = "Alternative name for the tune associated with this variation"
-otherNames = ["Alternative names by which the theme/version is known"]
+otherNames = ["Alternative names by which this theme/version is known"]
 roudNum = "Number assigned in the Roud Folk Song Index (if any)"
 childNum = "Number assigned in the Child Ballads (if any)"
 otherNums = ["Identifiers used in other collections"]
@@ -19,7 +19,7 @@ url = "Direct URL for the digitized transcription"
   credits = ["Listed as ROLE: NAME AS CREDITED (MORE COMMON NAME)"]
   edition = "If not first edition, provide edition number"
   publisher = "Publication company, imprint name, or institutional publisher"
-  place = "Formatted as CITY (COUNTRY)"
+  place = "The publisher's city, with state/country in parentheses as needed"
   year = "Original publication year for edition (ignoring reprints)"
   vol = "Volume number for multi-volume publications"
   issue = "Issue number or other identifier for serial publications"
@@ -40,13 +40,14 @@ dahrID = "Matrix ID in UCSB's Discography of American Historical Recordings"
 catalogRef = "Reference in a library catalog or archival system"
 url = "URL for additional details about the recording"
 [recordings.release]
-  title = "Title of the original release on which the track appears"
-  year = "Year of the original release (ignoring reissues)"
-  label = "Label of the original release formatted as NAME (COUNTRY)"
+  title = "Title of an original or early release on which the track appears"
+  year = "Year of this release (ignoring reissues)"
+  label = "Label of this release"
+  country = "Country of this release"
   matrixNum = "Matrix number(s) as etched on an LP or CD"
   catalogNum = "Catalog number as printed on the label of a record or CD"
   discogsId = "Release ID on Discogs"
-  url = "URL for additional details about the original release"
+  url = "URL for additional details about this release"
 [recordings.compilation]
   title = "Title of a compilation on which the track appears"
   year = "Year of the compilation release (ignoring reissues)"
@@ -65,7 +66,7 @@ instruments = "Instruments included in this arrangement"
 tonic = "The tonal center of the arrangement (often the final/resting tone)"
 mode = "Best classification of the pitch set relative to the tonal center"
 content = "Notation to render or URL of image"
-source = "Source citation for arrangement (may reference transcription)"
+source = "Source citation referencing transcriptions/recordings"
 
 [[media]]
 format = "IMAGE|AUDIO|VIDEO|WEBSITE|PDF"
