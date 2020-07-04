@@ -16,6 +16,7 @@ pageNumber = "Page number where the title appears"
 url = "Direct URL for the digitized transcription"
 [transcriptions.publication]
   title = "Title of the published collection"
+  primaryAuthor = "Last name(s) of primary author(s) or editor(s)"
   credits = ["Listed as ROLE: NAME AS CREDITED (MORE COMMON NAME)"]
   edition = "If not first edition, provide edition number"
   publisher = "Publication company, imprint name, or institutional publisher"
